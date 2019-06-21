@@ -21,8 +21,9 @@ def jogar():
             realiza_jogada(chute, letras_secretas, palavra_secreta)
         else:
             erros += 1
+            desenha_forca(erros)
 
-        enforcou = erros == 6
+        enforcou = erros == 7
         acertou = "_" not in letras_secretas
         print(letras_secretas)
 
@@ -66,6 +67,56 @@ def realiza_jogada(chute, letras_secretas, palavra_secreta):
         if (chute == letra):
             letras_secretas[index] = letra
         index += 1
+
+def desenha_forca(erros):
+    print("  _______     ")
+    print(" |/      |    ")
+
+    if(erros == 1):
+        print(" |      (_)   ")
+        print(" |            ")
+        print(" |            ")
+        print(" |            ")
+
+    if(erros == 2):
+        print(" |      (_)   ")
+        print(" |      \     ")
+        print(" |            ")
+        print(" |            ")
+
+    if(erros == 3):
+        print(" |      (_)   ")
+        print(" |      \|    ")
+        print(" |            ")
+        print(" |            ")
+
+    if(erros == 4):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |            ")
+        print(" |            ")
+
+    if(erros == 5):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |            ")
+
+    if(erros == 6):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |      /     ")
+
+    if (erros == 7):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |      / \   ")
+
+    print(" |            ")
+    print("_|___         ")
+    print()
 
 def imprime_mensagem_vencedor():
     print("Parabéns, você ganhou!")
